@@ -1,0 +1,42 @@
+{
+  "name": "sps",
+  "displayName": "SolidityProjectSecurity",
+  "description": "VS Code extention that aimed to help auditors and developers keeping their smart contracts secured",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.81.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "sps.scrutinize",
+        "title": "Scrutinize it!"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "yarn run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.81.0",
+    "@vscode/test-electron": "^2.3.4",
+    "eslint": "^8.47.0",
+    "glob": "^10.3.3",
+    "mocha": "^10.2.0",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "@solidity-parser/parser": "^0.16.1",
+    "sql.js": "^1.8.0",
+    "sqlite3": "^5.1.6"
+  }
+}
